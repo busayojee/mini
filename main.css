@@ -1,3 +1,6 @@
+*{
+    padding: 0;
+}
 .content { margin: auto;
     padding: 10px;
     margin-top: 0px;
@@ -5,7 +8,7 @@
     box-sizing: border-box;
     margin-left: 0px;
     margin-right: 0px;
-    
+    width: 100%;
 }
 /* Navbar */
 #topnav{
@@ -23,18 +26,18 @@
     display: flex;
     list-style: none;
     margin: 20px 0px;
-
+    
 }
 .navbar ul li{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1.1rem;
     font-weight: bold;
+
 }
 .navbar ul li a{
     text-decoration: none;
     color: black;
-    padding: 8px 25px;
-
+    padding: 6px 20px;
 }
 .navbar ul li a:hover{
     color: #606060;
@@ -77,6 +80,7 @@
     border-radius: 50%;
     width: 150px;
     margin-left: 70px;
+    
 }
 .main{
     justify-content: right;
@@ -99,6 +103,7 @@
 .social li {
     display: inline-flex;
     margin-top: 50px;
+    
 }
 .social i {
 	font-size:20px;
@@ -141,9 +146,55 @@ footer.second p {
 	text-align: center;
 	padding: 1%;
 }
+.comment{
+    text-align: center;
+    justify-content: center;
+    margin-left: 900px;
+    color: coral;
+    font-size: 14px;
+    margin-top: 0px;
+}
+.thought{
+    
+    text-align: justify;
+    width: 50%;
+    padding-left: 300px;
+    padding-right: 300px;
+    margin-top: 75px;
+    
+}
+.h5{
+    color: #606060;
+}
+/* .map{
+    margin-top: 75px;
+    margin-left: 80px;
+} */
+#map{
+    height: 350px;
+    width: 1100px;
+    margin-top: 75px;
+    margin-left: 80px;
+}
+.photo{
+    position: relative;
+    z-index: 0;
+    width: 100%;
+}
+.backmusic{
+    text-align: right;
+    position: relative;
+    opacity: 0.6;
+    display: flex;
+    margin-left: 900px;
+}
 @media screen and (max-width: 960px){
     .content{
         width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin: auto;
+        padding: 0;
     }
     
     .navbar{
@@ -154,9 +205,11 @@ footer.second p {
         width: 100%;
         max-width: 1300px;
         padding: 0;
+        position: sticky;
+        top: 0;
     }
     .navbar.responsive{
-        position: absolute;
+        position: relative;
     }
     
     .navbar ul{
@@ -168,7 +221,7 @@ footer.second p {
         top: -1000px;
         opacity: 0;
         transition: all 0.5s ease;
-        height: 50vh;
+        height: 80vh;
         z-index: -1;
         background: #131313;
     }
@@ -178,8 +231,10 @@ footer.second p {
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 99;
-        height: 50vh;
+        height: 80vh;
         font-size: 1.6rem;
+        
+        
     }
     
     .navbar__toggle .bar{
@@ -223,6 +278,11 @@ footer.second p {
 		margin: 0 0 3% 0;
 		padding: 0 2%;
     }
+    .thought {
+		width: 96%;
+		margin: 0 0 3% 0;
+		padding: 0 2%;
+    }
     .side {
 		width: 96%;
 		margin: 0 auto;
@@ -238,5 +298,31 @@ footer.second p {
     /* .parallax {
 		display: none;
 	} */
-
+    .comment{
+    text-align: center;
+    justify-content: center;
+    margin-left: 400px;
+    color: coral;
+    font-size: 14px;
+    margin-top: 0px;
+    }
+    .backmusic{
+        text-align: center;
+        position: relative;
+        opacity: 0.6;
+        display: flex;
+        margin-left: 320px;
+    }
+    #map{
+        height: 250px;
+        width: 400px;
+        margin-top: 75px;
+        margin-left: 80px;
+    }
+    .photo{
+        z-index: 0;
+        
+        position: relative;
+        width: 100%;
+    }
 }
