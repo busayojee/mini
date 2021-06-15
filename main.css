@@ -1,20 +1,18 @@
-*{
-    padding: 0;
-}
-.content { margin: auto;
+
+.content { margin: 0px;
     padding: 10px;
-    margin-top: 0px;
     background-color: #fafafa;
     box-sizing: border-box;
-    margin-left: 0px;
-    margin-right: 0px;
-    width: 100%;
+    
+    /* margin-left: 0px; */
+    /* margin-right: 0px; */
+    /* width: 100%; */
 }
 /* Navbar */
-#topnav{
+/* #topnav{
     overflow: hidden;
     background-color: #fafafa;
-}
+} */
 .navbar {
     display: flex;
     justify-content: center;
@@ -54,7 +52,6 @@
     font-weight: bold;
     position: relative;
     top: 0;
-    width: 100%;
     transition: 0.2s;
     position: sticky;
     top: 0;
@@ -63,11 +60,12 @@
 .sticky {
     position: fixed;
     top: 0;
-    width: 100%;
+    
   }
 .home {
-    margin-top: 0px;
-    position: relative;
+    margin: 0px;
+    /* position:; */
+   
 
 }
 
@@ -85,7 +83,7 @@
 .main{
     justify-content: right;
     text-align: left;
-    width: 80%;
+    /* width: 80%; */
     padding-left: 20px;
     margin-top: 75px;
 }
@@ -179,7 +177,7 @@ footer.second p {
 .photo{
     position: relative;
     z-index: 0;
-    width: 100%;
+    /* width: 100%; */
 }
 .backmusic{
     text-align: right;
@@ -188,25 +186,27 @@ footer.second p {
     display: flex;
     margin-left: 900px;
 }
-@media screen and (max-width: 960px){
-    .content{
-        width: 100%;
-        margin-left: 0px;
-        margin-right: 0px;
-        margin: auto;
-        padding: 0;
-    }
+@media screen and (max-width: 1024px){
     
+    .content{
+        
+        margin: 0px;
+    }
+    /* .home{
+        width: 100%;
+        margin: 0;
+    } */
     .navbar{
         display: flex;
         justify-content: space-between;
         height: 100px;
         z-index: 1;
-        width: 100%;
+        /* width: 100%; */
         max-width: 1300px;
         padding: 0;
         position: sticky;
         top: 0;
+        
     }
     .navbar.responsive{
         position: relative;
@@ -216,7 +216,8 @@ footer.second p {
         display: grid;
         grid-template-columns: auto;
         margin: 0;
-        width: 100%;
+        width: 450px;
+        /* width: 100%; */
         position: relative;
         top: -1000px;
         opacity: 0;
@@ -274,9 +275,9 @@ footer.second p {
     }
     
     .main {
-		width: 96%;
-		margin: 0 0 3% 0;
-		padding: 0 2%;
+		/* width: 100%; */
+		margin: 0 ;
+		padding-left: 10px;
     }
     .thought {
 		width: 96%;
@@ -284,8 +285,8 @@ footer.second p {
 		padding: 0 2%;
     }
     .side {
-		width: 96%;
-		margin: 0 auto;
+		width: 100%;
+		margin: 0 ;
     }
     .img {
 		padding: 2%;
@@ -301,7 +302,7 @@ footer.second p {
     .comment{
     text-align: center;
     justify-content: center;
-    margin-left: 400px;
+    margin-left: 350px;
     color: coral;
     font-size: 14px;
     margin-top: 0px;
@@ -311,18 +312,20 @@ footer.second p {
         position: relative;
         opacity: 0.6;
         display: flex;
-        margin-left: 320px;
+        margin-left: 300px;
     }
     #map{
         height: 250px;
         width: 400px;
         margin-top: 75px;
-        margin-left: 80px;
+        margin-left: 40px;
+        margin-right: 60px;
+        position: relative;
     }
     .photo{
         z-index: 0;
         
         position: relative;
-        width: 100%;
+        /* width: 100%; */
     }
 }
