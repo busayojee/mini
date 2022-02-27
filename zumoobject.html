@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scalable=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <title>busayo</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />	
+	<link href="css/font-awesome.min.css" rel="stylesheet"/>
+</head>
+<body class="content">
+        
+            <div id="header">
+                <h1>BUSAYO ALABI</h1>
+           
+             </div> 
+             <nav class="navbar" >
+                <div class="navbar__toggle" id="mobile-menu">
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                </div>
+                
+                  <ul>
+                      <li><a href="/index.html">About</a></li>
+                      <li><a  href="/education.html">Education</a></li>
+                      <li><a  href="/skills.html">Skills</a></li>
+                      <li><a href="/learning.html">Learning</a></li>
+                      <li><a href="/thoughts.html">Thoughts</a></li>
+                      <li><a href="/photography.html">Photography</a></li>
+                  </ul>
+              </nav>
+              <a name = "zumoobject" ></a>
+              <section id="home">
+                  <div class="main">
+                <div class="thought">
+                    <p><h1>Zumoshield object avoidance</h1>
+                    <h5 class="h5"><i>Source: <a href="https://www.pololu.com/product/136">Pololu</a> </i></h5>
+                    <p><div class="fullimg" id="fullImgbox">
+                        <img src="img/IMG_3137.jpg" id="fullImg">
+                        <span onclick="closefull()">x</span>
+                      </div>
+                      <img class="learnimg" src="img/IMG_3137.jpg" onclick="openfull(this.src)" style="cursor: pointer;"></p>
+                    <p><h4><b> Components</b></h4>
+                    </p>
+                    <p>Zumoshield</p>
+                    <p>Arduino</p>
+                    <p>3 Sharp IR sensors(I used the Sharp GP2Y0A21YK0F Analog Distance Sensor 10-80cm)</p>
+                    <p>A Breadboard</p>
+                    <p>Jumper wires</p>
+                    <p></p>
+                    <p>
+                        <h4><b>About</b></h4>
+                        <p>
+                           In this project, we programmed a Zumo with <b>3 Sharp IR sensors </b> to avoid obstacles while it's on a path. Avoidance of obstacles changes the course of the Zumo.
+                        </p></p>
+                        <p>
+                            The Sharp distance sensors are a popular choice for many projects that require accurate distance measurements. This IR sensor is more economical than sonar rangefinders, yet it provides much better performance than other IR alternatives.
+                        </p>
+                       <h4><b>Reading the sensor values</b></h4> 
+                        Initially I connected each sensor to a breadboard to see the values they were giving me. I noticed that the voltage and distance are inversely proportional, and the values I was getting on my serial monitor was the voltage divided by 
+                        a constant <b>0.0049</b>  which gave ranges of values from 0 to 1023 at 0 and 5v respectively. Although it didnt't get close to 1023, The highest value I was getting was in the range of 500's. The code for the sensor test is <a href="https://github.com/busayojee/Arduino/blob/main/Arduino/sensortest/sensortest.ino" class="twitter">here</a>
+
+
+<p></p><h4><b>Mapping and Object avoidance</b></h4> 
+Once I saw how the sensor values are gotten, I used a map function to map those values to reference numbers for a better understanding of the distance. By using the idea behind
+ PID I was able to form an algorithm which uses the difference in sensor values to manipulate the speed of each zumomotor using differnent if statements
+    
+   Zumo Object Avoidance code can be found <a href="https://github.com/busayojee/Arduino/blob/main/Arduino/collisionavoid/collisionavoid.ino" class="twitter">here</a></p>
+   <p>For a simpler version of this project which just uses a couple of if statements and 2 Sharp IR sensors you can click <a href="https://github.com/busayojee/Arduino/blob/main/Arduino/collisionavoid2/collisionavoid2.ino" class="twitter">here</a> </p>
+                    </div>
+                  </div>
+        </section>
+        <div class="clearfix"></div>
+        <footer>
+            <ul class="social">
+                <li><a href="https://www.instagram.com/busayo_jee/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://twitter.com/busayo_jee" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSBpDxzVVdwFpgChLfFdBJpBrmjlwblqwzwjRlDFXBnhTHZvHMxfHhQmQwWlncBmpcwjdflV" target="_blank"><i class="fa fa-google"></i></a></li>
+        
+            </ul>
+        </footer>
+        <footer class="second">
+            <p>&copy;ALABI BUSAYO</p>
+        </footer>
+        <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-1ad863c7-aa5b-4ed9-b53d-aca0eb59bafa"></div>
+<script>
+    var fullImgbox = document.getElementById("fullImgbox");
+    var fullImg = document.getElementById("fullImg");
+    function openfull(pic){
+      fullImgbox.style.display = "flex";
+      fullImg.src = pic;
+    }
+    function closefull(){
+      fullImgbox.style.display = "none";
+    }
+  </script>        
+
+          </body>
+        
+        <script src="apps.js"></script>
+        <!-- <script src="sticky.js"></script> -->
+          </html>

@@ -34,14 +34,28 @@
    
               <a name = "photos" ></a>
               <section id="home">
+                
                 <div class="main">
+                  <div class="fullimg" id="fullImgbox">
+                    <img src="img/imgpar.jpg" id="fullImg">
+                    <span onclick="closefull()">x</span>
+                  </div>
+                  
                 <div class="photo">
-                    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<div class="elfsight-app-3b9066c5-d506-4bf1-9d4c-472016057965"></div>
-</div>
+          
+                  <!-- <img src="1.HEIC" onclick="openfull(this.src)"> -->
+                  <img class="photoimg" src="img/1.jpg" onclick="openfull(this.src)">
+                  <img class="photoimg" src="img/IMG_0629.jpg"onclick="openfull(this.src)">
+                  <img class="photoimg" src="img/IMG_0635.jpg"onclick="openfull(this.src)">
+                  <img class="photoimg" src="img/IMG_0945.jpg" onclick="openfull(this.src)">
+                  <img class="photoimg" src="img/IMG_1087.jpg"onclick="openfull(this.src)">
+                  <img class="photoimg" src="img/IMG_2238.jpg"onclick="openfull(this.src)">
+                  <img class="photoimg" src="img/IMG_6829.jpg"onclick="openfull(this.src)">
+                  <img class="photoimg" src="img/IMG_4898.jpg"onclick="openfull(this.src)">
+                  <img class="photoimg" src="img/IMG_0007.jpg"onclick="openfull(this.src)">
+                    </div>
                 </div>
-                <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<div class="elfsight-app-9b27163e-7eac-4340-aeb5-da745c65dcb7"></div>
+                
               </section>
         <div class="clearfix"></div>
         
@@ -63,7 +77,17 @@
         <script src="https://apps.elfsight.com/p/platform.js" defer></script>
 <div class="elfsight-app-1ad863c7-aa5b-4ed9-b53d-aca0eb59bafa"></div>
         
-        
+        <script>
+          var fullImgbox = document.getElementById("fullImgbox");
+          var fullImg = document.getElementById("fullImg");
+          function openfull(pic){
+            fullImgbox.style.display = "flex";
+            fullImg.src = pic;
+          }
+          function closefull(){
+            fullImgbox.style.display = "none";
+          }
+        </script>
           </body>
         
         <script src="apps.js"></script>
