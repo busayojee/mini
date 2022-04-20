@@ -1,4 +1,6 @@
-
+html{
+    scroll-behavior: smooth;
+}
 .content { margin: 0px;
     padding: 10px;
     background-color: #fafafa;
