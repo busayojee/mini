@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scalable=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <title>busayo</title>
+    <link rel="stylesheet" type="text/css" href="static/main.css" />	
+	<link href="static/css/font-awesome.min.css" rel="stylesheet"/>
+    
+</head>
+
+<body class="content">
+    <div id="header">
+        <h1>BUSAYO ALABI</h1>
+   
+     </div> 
+    <nav class="navbar">
+        <div class="navbar__toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+          <ul>
+              <li><a href="/">About</a></li>
+              <li><a href="/education">Education</a></li>
+              <li><a href="/skills">Skills</a></li>
+              <li><a href="/projects">Projects</a></li>
+              <li><a href="/thoughts">Thoughts</a></li>
+              <li><a href="/photography">Photography</a></li>
+              <li><a class="active" href="#posts">Post</a></li>
+          <li><a href="/logout">Logout</a></li>
+             
+               
+              
+          </ul>
+          
+      </nav>
+      <div class="main">
+           
+          <form action="/posts" method="post">
+          Title:
+          <br>
+          <input type="text"  name="title" required>
+          <br>
+          Author:
+          <br>
+          <input type="text"  name="author" required>
+          <br>
+          Content:
+          <br>
+          <textarea name="content" rows="3" required>
+        </textarea><br>
+         <input type = "submit" value = "post" />
+    </form>
+<p></p>
+          My previous posts:
+          {%for post in posts%}
+          <section id="home">
+        
+            <div class="thought">
+                <section>
+        <a href="#thebeginning"></a>
+            <a name="thebeginning">
+                    
+                
+                <p>
+                    <h1>{{post.title}}</h1>
+                    {% if post.author %}
+                    <h5 class="h5"><i>by: {{post.author}} on {{post.date_posted}}</i></h5>
+                    {% else %}
+                    <h5 class="h5"><i>by: N/A on {{post.date_posted}}</i></h5>
+                    {% endif %}
+                    <p>
+                       {{post.content}}
+                    </p>
+                </div>
+        
+                
+    
+                    <a class="comment" href="/posts/comment/{{post.id}}">Add a comment</a>
+                    <a class="comment" href="/posts/edit/{{post.id}}">Edit</a>
+                    <a class="comment" href="/posts/delete/{{post.id}}">Delete</a>
+                    
+                </p>
+    
+            </div>
+        </section>
+    
+       {%endfor%}   
+          
+
+      </div>
+      
+      <div class="clearfix"></div>
+      <footer>
+          <ul class="social">
+              <li><a href="https://www.instagram.com/busayo_jee/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="https://twitter.com/busayo_jee" target="_blank"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSBpDxzVVdwFpgChLfFdBJpBrmjlwblqwzwjRlDFXBnhTHZvHMxfHhQmQwWlncBmpcwjdflV" target="_blank"><i class="fa fa-google"></i></a></li>
+  
+          </ul>
+      </footer>
+  
+    <footer class="second">
+          <p>&copy;ALABI BUSAYO</p>
+      </footer>
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+  <div class="elfsight-app-1ad863c7-aa5b-4ed9-b53d-aca0eb59bafa"></div>
+  <!-- </div> -->
+  </body>
+  
+  
+  <script src="static/js/apps.js"></script>
+  
+  </html>

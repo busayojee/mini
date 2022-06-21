@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scalable=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <title>busayo</title>
+    <link rel="stylesheet" type="text/css" href="static/main.css" />	
+	<link href="static/css/font-awesome.min.css" rel="stylesheet"/>
+</head>
+
+<body class="content">
+      <div id="header">
+        <h1>BUSAYO ALABI</h1>
+   
+     </div> 
+     <nav class="navbar" >
+        <div class="navbar__toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        
+          <ul>
+              <li><a href="/">About</a></li>
+              <li><a  href="/education">Education</a></li>
+              <li><a  href="/skills">Skills</a></li>
+              <li><a  href="/projects">Projects</a></li>
+              <li><a href="/thoughts">Thoughts</a></li>
+              <li><a class="active" href="#photos">Photography</a></li>
+          </ul>
+      </nav>
+   
+              <a name = "photos" ></a>
+              <section id="home">
+                
+                <div class="main">
+                  <div class="fullimg" id="fullImgbox">
+                    <img src="static/img/imgpar.jpg" id="fullImg">
+                    <span onclick="closefull()">x</span>
+                  </div>
+                  
+                <div class="photo">
+          
+                  <!-- <img src="1.HEIC" onclick="openfull(this.src)"> -->
+                  <img class="photoimg" src="static/img/1.jpg" onclick="openfull(this.src)">
+                  <img class="photoimg" src="static/img/IMG_0629.jpg"onclick="openfull(this.src)">
+                  <img class="photoimg" src="static/img/IMG_0635.jpg"onclick="openfull(this.src)">
+                  <img class="photoimg" src="static/img/IMG_0945.jpg" onclick="openfull(this.src)">
+                  <img class="photoimg" src="static/img/IMG_1087.jpg"onclick="openfull(this.src)">
+                  <img class="photoimg" src="static/img/IMG_2238.jpg"onclick="openfull(this.src)">
+                  <img class="photoimg" src="static/img/IMG_6829.jpg"onclick="openfull(this.src)">
+                  <img class="photoimg" src="static/img/IMG_4898.jpg"onclick="openfull(this.src)">
+                  <img class="photoimg" src="static/img/IMG_0007.jpg"onclick="openfull(this.src)">
+                    </div>
+                </div>
+                
+              </section>
+        <div class="clearfix"></div>
+        
+        <footer>
+            <ul class="social">
+                <li><a href="https://www.instagram.com/busayo_jee/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://twitter.com/busayo_jee" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSBpDxzVVdwFpgChLfFdBJpBrmjlwblqwzwjRlDFXBnhTHZvHMxfHhQmQwWlncBmpcwjdflV" target="_blank"><i class="fa fa-google"></i></a></li>
+        
+            </ul>
+        </footer>
+        <footer class="second">
+            <p>&copy;ALABI BUSAYO</p>
+        </footer>
+        <div class="backmusic">
+        <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-c542fa2a-b01a-4913-902d-1806728b367f"></div> </div>
+
+        <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-1ad863c7-aa5b-4ed9-b53d-aca0eb59bafa"></div>
+        
+        <script>
+          var fullImgbox = document.getElementById("fullImgbox");
+          var fullImg = document.getElementById("fullImg");
+          function openfull(pic){
+            fullImgbox.style.display = "flex";
+            fullImg.src = pic;
+          }
+          function closefull(){
+            fullImgbox.style.display = "none";
+          }
+        </script>
+          </body>
+        
+        <script src="static/js/apps.js"></script>
+        <!-- <script src="sticky.js"></script> -->
+          </html>

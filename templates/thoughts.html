@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scalable=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <title>busayo</title>
+    <link rel="stylesheet" type="text/css" href="static/main.css" />	
+	<link href="static/css/font-awesome.min.css" rel="stylesheet"/>
+   
+</head>
+<body class="content">
+    
+   
+    
+        <div id="header">
+            <h1>BUSAYO ALABI</h1>
+       
+         </div> 
+         <div class="login">
+            {% with messages = get_flashed_messages() %}  
+            {% if messages %}  
+                  {% for message in messages %}
+                  <div class="notify" id = "x_button"> 
+                   <i onclick="closebutton()">x</i>
+                   <div id="info"> <p>{{ message }}</p> </div> 
+                  </div>
+                       
+                  {% endfor %}  
+            {% endif %}  
+         {% endwith %}
+             LOGIN
+            <form action="/thoughts" method="post">
+                Username:
+                <br>
+                <input type="text" name="username" required>
+                <br>
+                Password:
+                <br>
+                <input type="password" name="password" required>
+                <br>
+                <input type="submit" value="sign-in">
+            </form>
+         </div>
+      
+         <!-- <div id="topnav"> -->
+<nav class="navbar" >
+    <div class="navbar__toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    
+      <ul>
+          <li><a href="/">About</a></li>
+          <li><a href="/education">Education</a></li>
+          <li><a href="/skills">Skills</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a class="active" href="/thoughts">Thoughts</a></li>
+          <li><a href="/photography">Photography</a></li>
+          
+      </ul>
+  </nav>
+  
+  <div class="main">
+   
+    {%for post in posts%}
+  <section id="home">
+
+    <div class="thought">
+        
+
+            
+        
+        <p>
+            <h1>{{post.title}}</h1>
+            {% if post.author %}
+            <h5 class="h5"><i>by: {{post.author}} on {{post.date_posted}}</i></h5>
+            {% else %}
+            <h5 class="h5"><i>by: N/A on {{post.date_posted}}</i></h5>
+            {% endif %}
+            <p>
+               {{post.content}}
+            </p>
+        </div>
+
+        
+
+            <a class="comment" href="/posts/comment/{{post.id}}">Add a comment</a>
+            
+        </p>
+
+    </div>
+</section>
+
+{%endfor%}   
+  
+
+</div>
+
+
+
+  <div class="clearfix"></div>
+<footer>
+    <ul class="social">
+        <li><a href="https://www.instagram.com/busayo_jee/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="https://twitter.com/busayo_jee" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSBpDxzVVdwFpgChLfFdBJpBrmjlwblqwzwjRlDFXBnhTHZvHMxfHhQmQwWlncBmpcwjdflV" target="_blank"><i class="fa fa-google"></i></a></li>
+
+    </ul>
+</footer>
+<footer class="second">
+    <p>&copy;ALABI BUSAYO</p>
+</footer>
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-1ad863c7-aa5b-4ed9-b53d-aca0eb59bafa"></div>
+<script>
+    info = document.getElementById("info")
+    x_button = document.getElementById("x_button")
+    function closebutton(){
+        info.style.display = "none";
+        x_button.style.display = "none";
+    }
+</script>
+</body>
+
+<script src="static/js/apps.js"></script>
+<!-- <script src="sticky.js"></script> -->
+  </html>

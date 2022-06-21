@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scalable=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <title>busayo</title>
+    <link rel="stylesheet" type="text/css" href="static/main.css" />	
+	<link href="static/css/font-awesome.min.css" rel="stylesheet"/>
+</head>
+<body class="content">
+<!-- <div class="content"> -->
+    
+        <div id="header">
+            <h1>BUSAYO ALABI</h1>
+       
+         </div> 
+         <!-- <div id="topnav"> -->
+<nav class="navbar" >
+    <div class="navbar__toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    
+      <ul>
+          <li><a href="/">About</a></li>
+          <li><a class="active" href="#education">Education</a></li>
+          <li><a href="/skills">Skills</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/thoughts">Thoughts</a></li>
+          <li><a href="/photography">Photography</a></li>
+      </ul>
+  </nav>
+  <!-- </div> -->
+    <a name = "education" ></a>
+    <section id="home">
+    <div class="main">
+        <p>
+                    <!-- I’m currently studying at Near East University also known as Yakin Dogu University. A university in the northern part of Cyprus TRNC. I'm currently taking the Mechatronics program and I'm in year 2 of 4. <p></p>  -->
+
+I attended <a class="twitter" href="http://valenciaschools-ng.com">Valencia College</a>. A secondary school that is located in Ibadan Oyo State Nigeria. I spent the entire six years of my secondary schooling there.<p></p> 
+
+I also attended <a class="twitter" href="https://ronknewageschool.com">Ronk New Age</a>. A primary school located in the same Ibadan Oyo State Nigeria. This is where I got my primary education.<p></p> 
+
+These schools have been and are important to my development as a person. That said? I do not get all my learning from schools, I do a bit of self development if I may call it that myself. I am self taught in some of the skills that I believe I have.  <p></p>
+        </p>
+    </div>
+    <!-- <section class="parallax">
+        <div class="parallax-inner"></div>
+    </section> -->
+    
+</section>
+<div id="map"></div>
+<script>
+    function initMap(){
+  var location = {lat: 7.376250, lng: 3.916260};
+  var location2 = {lat: 35.217790, lng:33.331680};
+  var location3 = {lat: 7.38778, lng:3.89639};
+  var map = new google.maps.Map(document.getElementById("map"),{
+    zoom: 8,
+    center: location
+  });
+  var marker = new google.maps.Marker({
+      position: location,
+      map: map
+  });
+  var marker = new google.maps.Marker({
+      position: location2,
+      map: map
+  });
+  var marker = new google.maps.Marker({
+      position: location3,
+      map: map
+  });
+}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRBM3fMySKmiEPNFIyZiPo0UBXcCxyzl8&callback=initMap"></script>
+
+<!-- <p class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3259.186181181984!2d33.32419651475065!3d35.22673508030268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de111433eedaad%3A0xb704548b1127a239!2sNear%20East%20University!5e0!3m2!1sen!2s!4v1623696973861!5m2!1sen!2s" width="1100" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>   
+
+</p> -->
+
+<div class="clearfix"></div>
+<footer>
+    <ul class="social">
+        <li><a href="https://www.instagram.com/busayo_jee/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="https://twitter.com/busayo_jee" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSBpDxzVVdwFpgChLfFdBJpBrmjlwblqwzwjRlDFXBnhTHZvHMxfHhQmQwWlncBmpcwjdflV" target="_blank"><i class="fa fa-google"></i></a></li>
+
+    </ul>
+</footer>
+<footer class="second">
+    <p>&copy;ALABI BUSAYO</p>
+</footer>
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-1ad863c7-aa5b-4ed9-b53d-aca0eb59bafa"></div>
+<!-- </div> -->
+
+  </body>
+
+<script src="static/js/apps.js"></script>
+
+<!-- <script src="sticky.js"></script> -->
+  </html>
