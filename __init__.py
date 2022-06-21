@@ -4,6 +4,8 @@ from datetime import datetime
 from sqlalchemy import desc
 
 app = Flask(__name__)
+def getApp():
+    return app
 app.secret_key = "myblog"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
 db = SQLAlchemy(app)
