@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scalable=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="HandheldFriendly" content="true">
+   {% block head %}
+   {% endblock %}
+    
+      
+</head>
+<body class="content">
+    <div id="header">
+        <h1>BUSAYO ALABI</h1>
+   
+     </div> 
+    <nav class="navbar" >
+        <div class="navbar__toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        
+          <ul>
+              <li><a href="/">About</a></li>
+              <li><a href="/education">Education</a></li>
+              <li><a href="/skills">Skills</a></li>
+              <li><a href="/projects">Projects</a></li>
+              <li><a class="active" href="/thoughts">Thoughts</a></li>
+              <li><a href="/photography">Photography</a></li>
+              <li><a href="/posts">Post</a></li>
+              <li><a href="/logout">Logout</a></li>
+              
+          </ul>
+      </nav>
+    
+   
+    
+      <div class="main">
+         
+         <!-- <div id="topnav"> -->
+
+   {% block body %}
+   {% endblock %}
+    
+      </div>
+
+
+
+<footer class="second">
+    <p>&copy;ALABI BUSAYO</p>
+</footer>
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-1ad863c7-aa5b-4ed9-b53d-aca0eb59bafa"></div>
+
+</body>
+<style>
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #fafafa;
+    position: sticky;
+    top: 0;
+}
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 20px 0px;
+    
+}
+.navbar ul li{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 6px 20px;
+}
+.navbar ul li a:hover{
+    color: #606060;
+}
+.navbar ul li a.active{
+    color: #606060;
+}
+#header {
+    text-align: center;
+    padding: 50px 10px;
+    margin-bottom: 0px;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+    top: 0;
+    transition: 0.2s;
+    position: sticky;
+    top: 0;
+    background-color: #fafafa;
+}
+.main{
+    justify-content: right;
+    text-align: left;
+    /* width: 80%; */
+    padding-left: 20px;
+    margin-top: 75px;
+    animation: transitionin 1s;
+}
+
+  </style>
+
+<script>const menu = document.querySelector('#mobile-menu');
+    const menuLinks = document.querySelector('.navbar ul');
+    menu.addEventListener('click',function() {
+        menu.classList.toggle('is-active');
+        menuLinks.classList.toggle('active')
+    });
+    window.navbar = function() {myFunction()};
+    function myFunction() {
+        var x = document.getElementById('topnav');
+        if (x.className === 'navbar'){
+                x.className += 'responsive';
+        }
+        else{
+            x.className = 'navbar';
+        }
+        
+    }
+    // When the user scrolls down 50px from the top of the document, resize the header's font size
+    window.onscroll = function() {scrollFunction()};
+         
+    function scrollFunction() {
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("header").style.fontSize = "5px";
+      } else {
+        document.getElementById("header").style.fontSize = "15px";
+      }
+    }
+    </script>
+<!-- <script src="sticky.js"></script> -->
+  </html>
