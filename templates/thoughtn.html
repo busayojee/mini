@@ -50,11 +50,11 @@
                     
                 
                 <p>
-                    <h1>{{post.title}}</h1>
+                    <h1 style="margin: 0;" >{{post.title}}</h1>
                     {% if post.author %}
-                    <h5 class="h5"><i>by: {{post.author}} on {{post.date_posted}}</i></h5>
+                    <h5 class="h5" style="margin: 0;" ><i>by: {{post.author}} on {{post.date_posted}}</i></h5>
                     {% else %}
-                    <h5 class="h5"><i>by: N/A on {{post.date_posted}}</i></h5>
+                    <h5 class="h5" style="margin: 0;" ><i>by: N/A on {{post.date_posted}}</i></h5>
                     {% endif %}
                     <p>
                        {{post.content}}
