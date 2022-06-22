@@ -5,7 +5,7 @@ from sqlalchemy import desc
 
 app = Flask(__name__)
 
-app.secret_key = "myblo"
+app.secret_key = "myblog"
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://esvzmtryddeuyq:a78ac493f8751971e1ecba3c6ff2991eac6384bbe9493881971dc2efc8569825@ec2-63-32-248-14.eu-west-1.compute.amazonaws.com:5432/da7vsgtuf7l2s'
 db = SQLAlchemy(app)
