@@ -67,12 +67,12 @@
                 
                 <p>
                   {% if comment.nickname %}
-                  <h3><b>{{comment.nickname}}</b></h3>
+                  <h3 style="margin: 0;" ><b>{{comment.nickname}}</b></h3>
                     {% else %}
-                    <h3><b>Anonymous</b></h3>
+                    <h3 style="margin: 0;" ><b>Anonymous</b></h3>
                     {% endif %}
                     
-                    <h5 class="h5"><i>on {{comment.time}}</i></h5>
+                    <h5 style="margin: 0;" class="h5"><i>on {{comment.time}}</i></h5>
                     <p>
                        {{comment.comment}}
                     </p>
