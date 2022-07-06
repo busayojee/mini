@@ -43,7 +43,7 @@
           <form action="/posts/comment/{{posts.id}}" method="post">
           Nickname:
           <br>
-          <input type="text"  name="nickname" required>
+          <input type="text"  name="nickname" placeholder="Not compulsory">
           <br>
           Email:
           <br>
@@ -51,19 +51,18 @@
           <br>
           Comment:
           <br>
-          <textarea name="comment" id= 'content' rows="3" required>
-        </textarea><br>
+          <textarea name="comment" id= 'content' rows="3" required></textarea><br>
          <input type = "submit" value = "comment" />
     </form>
 <p></p>
-         Comments
+    {{nums}} comments 
          
           <section id="home">
         {%for comment in comments%}
             <div class="thought">
                
                
-       
+              
                 
                 <p>
                   {% if comment.nickname %}
