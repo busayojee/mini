@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 app.secret_key = "myblog"
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://esvzmtryddeuyq:a78ac493f8751971e1ecba3c6ff2991eac6384bbe9493881971dc2efc8569825@ec2-63-32-248-14.eu-west-1.compute.amazonaws.com:5432/da7vsgtuf7l2s'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://wadolglkhevojs:a59a4eff860cf0945cc66de18012d287a96a5df8b7f3978404b7a72277723333@ec2-52-49-120-150.eu-west-1.compute.amazonaws.com:5432/d415i8h43grm90'
 db = SQLAlchemy(app)
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key = True)
@@ -38,15 +38,18 @@ class Comment(db.Model):
 # w = Comment(nickname = "hello", email = "busayo", comment="First Post", id = 1)
 # db.session.add(w)
 # db.session.commit()
-# posts = Comment.query.all()
-# print(posts)
+# posts = Comment.query.filter(Comment.id == 3).all()
+# print(len(posts))
 # for new in posts:
+#     print(new.comment)
 #     db.session.delete(new)
 #     db.session.commit()
+
 login_database = {"busayo":"busayo", "tosin":"tosin"}
 @app.route("/")
 def home():
     return render_template("index.html")
+
 @app.route("/thoughts", methods= ["POST", "GET"])
 def thoughts():
     all_post = Post.query.order_by(desc(Post.date_posted)).all() 
@@ -76,12 +79,10 @@ def thoughts():
 @app.route("/thoughtn")
 def thoughtn():
     all_post = Post.query.order_by(desc(Post.date_posted)).all()
+    
     if g.name:
         return render_template("thoughtn.html", posts = all_post)
     return render_template('thoughts.html', posts = all_post)
-    # else:
-    #     all_post = Post.query.order_by(desc(Post.date_posted)).all()
-    #     return render_template('thoughts.html', posts = all_post)
 @app.before_request
 def before_request():
     g.name = None
@@ -105,9 +106,6 @@ def skills():
 @app.route("/projects")
 def projects():
     return render_template("learning.html")
-# @app.route("/thoughts")
-# def thoughts():
-#     return render_template("thoughts.html")
 @app.route("/photography")
 def photography():
     return render_template("photography.html")
@@ -151,6 +149,8 @@ def edit(id):
 def comment(id):
     post = Post.query.get_or_404(id)
     all_comment = Comment.query.filter(Comment.id == id).order_by(desc(Comment.time)).all()
+    num = Comment.query.filter(Comment.id == id).all()
+    num = len(num)
     if request.method == 'POST':
         nicknames = request.form['nickname']
         emails = request.form['email']
@@ -161,8 +161,8 @@ def comment(id):
         return redirect('/thoughtn')
     else:
         if g.name:
-            return render_template('comments.html', comments = all_comment, posts = post)
-        return render_template('commentmain.html', comments = all_comment, posts = post)
+            return render_template('comments.html', comments = all_comment, posts = post, nums = num)
+        return render_template('commentmain.html', comments = all_comment, posts = post, nums =num)
 @app.route("/comment/delete/<int:id>")
 def delete_comment(id):
     post = Comment.query.get_or_404(id)
