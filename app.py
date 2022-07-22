@@ -14,7 +14,7 @@ class Post(db.Model):
     title = db.Column(db.String(100), nullable = False)
     author = db.Column(db.String(100), nullable = False, default = 'N/A')
     content = db.Column(db.Text, nullable = False)
-    date_posted = db.Column(db.DateTime, nullable = False, default = datetime.utcnow())
+    date_posted = db.Column(db.DateTime, nullable = False, default = datetime.now)
     comment = db.relationship('Comment')
     def __repr__(self):
         return 'Post' + str(self.id)
@@ -24,7 +24,7 @@ class Comment(db.Model):
     nickname = db.Column(db.String(100), nullable = False, default = 'Anonymous')
     email = db.Column(db.String(20), nullable = False, default = 'N/A')
     comment = db.Column(db.Text, nullable = False)
-    time = db.Column(db.DateTime, nullable = False, default = datetime.utcnow())
+    time = db.Column(db.DateTime, nullable = False, default = datetime.now)
     id = db.Column(db.Integer, db.ForeignKey('post.id'))
 
 # db.create_all()
@@ -44,6 +44,7 @@ class Comment(db.Model):
 #     print(new.comment)
 #     db.session.delete(new)
 #     db.session.commit()
+
 
 login_database = {"busayo":"busayo", "tosin":"tosin"}
 @app.route("/")
@@ -131,6 +132,11 @@ def posts():
 @app.route("/posts/delete/<int:id>")
 def delete(id):
     post = Post.query.get_or_404(id)
+    comments = Comment.query.filter(Comment.id== id).all()
+    if comments:
+        for comment in comments:
+            db.session.delete(comment)
+            db.session.commit()
     db.session.delete(post)
     db.session.commit()
     return redirect('/posts')
