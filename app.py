@@ -14,7 +14,7 @@ class Post(db.Model):
     title = db.Column(db.String(100), nullable = False)
     author = db.Column(db.String(100), nullable = False, default = 'N/A')
     content = db.Column(db.Text, nullable = False)
-    date_posted = db.Column(db.DateTime, nullable = False, default = datetime.now)
+    date_posted = db.Column(db.DateTime, nullable = False, default = datetime.utcnow)
     comment = db.relationship('Comment')
     def __repr__(self):
         return 'Post' + str(self.id)
@@ -24,7 +24,7 @@ class Comment(db.Model):
     nickname = db.Column(db.String(100), nullable = False, default = 'Anonymous')
     email = db.Column(db.String(20), nullable = False, default = 'N/A')
     comment = db.Column(db.Text, nullable = False)
-    time = db.Column(db.DateTime, nullable = False, default = datetime.now)
+    time = db.Column(db.DateTime, nullable = False, default = datetime.utcnow)
     id = db.Column(db.Integer, db.ForeignKey('post.id'))
 
 # db.create_all()
